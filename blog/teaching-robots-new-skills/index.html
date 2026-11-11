@@ -407,7 +407,7 @@
     <li>To diagnose the failures, the LLMs <mark><b>find the neurons the trained policy never uses</b></mark> and probe the network with tools from mechanistic interpretability.</li>
     <li>To fix them, they <mark><b>write small programs into those unused neurons</b></mark>: controllers that switch on only when needed, such as lowering the cube once the wrist camera sees the tray below.</li>
     <li>In doing so, the LLMs give the policy qualitatively new capabilities. When the tray's location is no longer static, three of the LLMs wire a readout from the cameras into the network that tells the arm where to carry the cube: spatial generalization that <mark><b>was not present in the original policy</b></mark>.</li>
-    <li>Across five experiments, the best edits raise task success from 0–5% to between 33% and 95%. And the skill <mark><b>seems to grow with model capability</b></mark>: the newest model we tested (Fable 5.2) does best in every experiment it solved without a loophole.</li>
+    <li>Across five experiments, the best edits raise task success from 0–5% to between 33% and 95%. And the skill <mark><b>seems to grow with model capability</b></mark>: the newest model we tested (Fable 5.2) does best in all experiments.</li>
     <li>All of this works <mark><b>without gradient-based optimization or fitting, and without a single new demonstration</b></mark>, using only a fixed budget of test runs.</li>
     <li>Throughout the history of robot learning, a failing policy has meant more data: more demonstrations, more robot time, another round of training. This may be changing: <mark><b>robot policies could soon be debugged and repaired natively in weight space, by LLMs that reason about why the robot fails</b></mark>.</li>
   </ul>
