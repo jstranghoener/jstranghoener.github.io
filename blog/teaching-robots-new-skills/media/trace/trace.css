@@ -1,0 +1,52 @@
+/* Reasoning traces in weight space (experiment 4): an editor's verbatim messages as a timeline, the weights they name
+   highlighted, followed by the edit exactly as the editor wrote it into the matrices. */
+.trace { --ed: var(--opus); border: 1px solid var(--rule); border-radius: 12px; background: var(--surface);
+  margin: 1rem 0 1.4rem; overflow: hidden; }
+.trace-head { display: flex; flex-wrap: wrap; gap: 0.2rem 0.7rem; align-items: baseline; padding: 0.6rem 0.9rem 0.2rem;
+  font: 0.78rem/1.4 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+.trace-who { font-weight: 700; color: var(--ed); }
+.trace ol { list-style: none; margin: 0; padding: 0.35rem 0.9rem 0.6rem 2.1rem; position: relative; }
+.trace ol::before { content: ""; position: absolute; left: 1.05rem; top: 0.9rem; bottom: 1rem; width: 2px;
+  background: color-mix(in srgb, var(--ed) 35%, transparent); }
+.trace li { position: relative; margin: 0.45rem 0; font-size: 0.92rem; line-height: 1.5; }
+.trace li::before { content: ""; position: absolute; left: -1.38rem; top: 0.42rem; width: 9px; height: 9px;
+  border-radius: 50%; border: 2px solid var(--ed); background: var(--surface); }
+.trace li.key::before { background: var(--ed); }
+.trace li .turn { font: 600 0.72rem Inter, ui-sans-serif, system-ui, sans-serif; color: var(--muted); margin-right: 0.35rem; }
+.trace mark { background: color-mix(in srgb, var(--ed) 16%, transparent); color: inherit; border-radius: 3px;
+  padding: 0 0.15rem; }
+.trace mark b, .trace mark code { font-weight: 700; }
+.trace code { font: 0.8rem/1.4 "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace; }
+.trace-edit { border-top: 1px solid var(--rule); background: var(--bg); padding: 0.55rem 0.9rem 0.65rem; }
+.trace-edit-h { font: 600 0.75rem Inter, ui-sans-serif, system-ui, sans-serif; color: var(--ink); margin-bottom: 0.3rem; }
+.trace-edit-h span { font-weight: 400; color: var(--muted); }
+.trace-edit pre { margin: 0; overflow-x: auto; font: 0.76rem/1.5 "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--ink); white-space: pre; }
+.trace-edit pre .dim { color: var(--muted); }
+.trace-res { border-top: 1px solid var(--rule); padding: 0.45rem 0.9rem; font: 600 0.8rem Inter, ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink); background: color-mix(in srgb, var(--ed) 7%, var(--surface)); }
+.trace-res span { font-weight: 400; color: var(--muted); }
+.vid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+@media (max-width: 640px) { .vid2 { grid-template-columns: 1fr; } }
+/* Step cards: one turning point of an editor's run (experiment 4). */
+.step { border: 1px solid var(--rule); border-radius: 12px; background: var(--bg); margin: 1.4rem 0; overflow: hidden; }
+.step-head { display: flex; flex-wrap: wrap; align-items: center; gap: 0.4rem 0.7rem; padding: 0.7rem 0.95rem;
+  background: var(--surface); border-bottom: 1px solid var(--rule); font-family: Inter, ui-sans-serif, system-ui, sans-serif; }
+.step-n { flex: none; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--opus); color: #fff;
+  font: 700 0.85rem/1.6rem Inter, ui-sans-serif, system-ui, sans-serif; text-align: center; }
+.step-t { font-weight: 700; font-size: 1.02rem; color: var(--ink); }
+.step-s { margin-left: auto; font-size: 0.85rem; color: var(--ink-2); white-space: nowrap; }
+.step-s b { color: var(--ink); }
+.step > video { display: block; width: 100%; height: auto; background: var(--surface); }
+.step-cap { padding: 0.35rem 0.95rem 0; font: 0.78rem/1.45 Inter, ui-sans-serif, system-ui, sans-serif; color: var(--muted); }
+.beats { padding: 0.5rem 0.95rem 0.7rem; }
+.beat { display: grid; grid-template-columns: 5.6rem 1fr; gap: 0.7rem; margin: 0.45rem 0; font-size: 0.97rem; line-height: 1.55; }
+.beat > span { font: 600 0.72rem/1.9 Inter, ui-sans-serif, system-ui, sans-serif; text-transform: uppercase;
+  letter-spacing: 0.05em; color: var(--opus); }
+@media (max-width: 640px) { .beat { grid-template-columns: 1fr; gap: 0; } }
+.step-res { padding: 0.55rem 0.95rem; border-top: 1px solid var(--rule); font: 0.86rem/1.5 Inter, ui-sans-serif, system-ui, sans-serif;
+  color: var(--ink-2); background: color-mix(in srgb, var(--opus) 6%, var(--bg)); }
+.step-res b { color: var(--ink); }
+details.words { border-top: 1px solid var(--rule); }
+details.words > summary { cursor: pointer; padding: 0.55rem 0.95rem; font: 600 0.84rem Inter, ui-sans-serif, system-ui, sans-serif; color: var(--ink); }
+details.words .trace { margin: 0 0.8rem 0.8rem; }
