@@ -1342,7 +1342,7 @@
   <div><b>What it gets</b><span>The policy's weights in a Python kernel, 200 demonstrations from the training environment, and a recording of every test it has run. It can run the network on these recordings as often as it likes, but the kernel has no simulator.</span></div>
   <div><b>How it tests</b><span>To see the robot move, it spends one of 25 test rounds. Each round runs its current edit on the same 100 practice episodes in the changed environment.</span></div>
   <div><b>What is off-limits</b><span>Gradients, optimizers, fitting and automated search. To write the strongest policy it can, it has to edit the weights itself.</span></div>
-  <div><b>How it is scored</b><span>Its final edit runs on 500 new episodes it never sees, from the same starts as the original policy, in some experiments with a variant it was never shown. A cube counts only if it is lifted and set down in the tray.</span></div>
+  <div><b>How it is scored</b><span>Its final edit runs on 500 new episodes it never sees, from the same starts as the original policy, in some experiments with a variant it was never shown. A cube counts once it has been lifted and then reaches the tray.<sup>3</sup></span></div>
 </div>
 
 <details class="how"><summary>The harness in detail</summary>
